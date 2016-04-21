@@ -27,7 +27,8 @@ namespace TicketingAPI_V1.Controllers
         {
             IHttpActionResult result = null;
 
-
+            BaseResult<StringIdResult> r =await  _userRepository.GetUser(model);
+            result = GetResult(r);
             return result;
         }
 
@@ -38,9 +39,7 @@ namespace TicketingAPI_V1.Controllers
             IHttpActionResult result = null;
 
             BaseResult<StringIdResult> r = await _userRepository.CreateUser(model);
-
             result = GetResult<StringIdResult>(r);
-
             return result;
         }
     }

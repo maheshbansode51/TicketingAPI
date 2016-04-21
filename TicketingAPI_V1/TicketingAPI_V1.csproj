@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MongoDB.Bson">
       <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
@@ -92,6 +95,7 @@
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="DataModels\PlatformTicketDataModel.cs" />
     <Compile Include="DataModels\TicketDataModel.cs" />
+    <Compile Include="Extensions\ValidationExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,6 +105,8 @@
     <Compile Include="Models\StringIdResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Validators\LoginUserValidator.cs" />
+    <Compile Include="Validators\RegisterUserValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
