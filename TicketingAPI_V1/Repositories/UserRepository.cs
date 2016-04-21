@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -24,23 +25,43 @@ namespace TicketingAPI_V1.Repositories
         public async Task<BaseResult<StringIdResult>> CreateUser(RegisterModel model)
         {
             var result = new BaseResult<StringIdResult>();
+
             try
-            {
+            {             
                 var userCollection = _database.GetCollection<RegisterModel>("cUsers");
 
                 //find user by phone number if not then only register
+                var filter = Builders<RegisterModel>.Filter.Eq("PhoneNumber", model.PhoneNumber);
 
-                await userCollection.InsertOneAsync(model);
-                result.Suceeded = true;
+                var user = await userCollection.Find(filter).ToListAsync();
+
+                if(user.Count==0)
+                {
+                    model.Id = Guid.NewGuid().ToString();
+
+                    await userCollection.InsertOneAsync(model);
+                    result.Suceeded = true;
+
+                    StringIdResult idResult = new StringIdResult();
+                    idResult.Id = model.Id;
+                    result.Value = idResult;
+                }
+                else
+                {
+                    result.Suceeded = false;
+                    result.AddError("Already registered phone number");
+                }
+
+                
             }
             catch (Exception)
             {
                 result.Suceeded = false;
                 result.AddError("An error occured while registering user");
             }
-            
 
-            return baseResult;
+
+            return result;
         }
 
     }

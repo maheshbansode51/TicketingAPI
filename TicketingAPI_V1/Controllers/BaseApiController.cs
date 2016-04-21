@@ -1,10 +1,11 @@
-﻿using FirstDemo.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TicketingAPI_V1.Models;
 
 namespace TicketingAPI_V1.Controllers
 {
