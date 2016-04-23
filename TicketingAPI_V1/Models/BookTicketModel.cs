@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TicketingAPI_V1.DataModels;
 
-namespace TicketingAPI_V1.DataModels
+namespace TicketingAPI_V1.Models
 {
-    public class TicketDataModel
+    public class BookTicketModel
     {
-        public string Id { get; set; }
         public string coach { get; set; }
         public int[] seatNumbers { get; set; }
-        public string TrainName { get; set; }
-        public string UserId { get; set; }
+        public string TrainName { get; set; }       
         public string Source { get; set; }
         public string Destination { get; set; }
         public string SourceCode { get; set; }
@@ -19,7 +18,7 @@ namespace TicketingAPI_V1.DataModels
         public string BookingDate { get; set; }
         public string JourneyDate { get; set; }
         public string TicketPrice { get; set; }
-        public TicketStatus TicketStatus { get; set; }
-        public TicketType TicketType { get; set; }
+        public TicketType TicketType { get; set; }    
+
     }
 }

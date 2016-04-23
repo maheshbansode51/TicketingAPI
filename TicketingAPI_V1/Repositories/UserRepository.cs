@@ -145,5 +145,16 @@ namespace TicketingAPI_V1.Repositories
            
             return result;
         }
+
+        public async Task<RegisterModel> GetUser(string userId)
+        {
+            var userCollection = _database.GetCollection<RegisterModel>("cUsers");
+            var filter = Builders<RegisterModel>.Filter.Eq("Id",userId);
+            var user = await userCollection.Find(filter).ToListAsync();
+            if (user != null && user.Count == 1)
+                return user[0];
+            else
+                return null;
+        }
     }
 }

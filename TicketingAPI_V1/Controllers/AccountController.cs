@@ -11,7 +11,7 @@ using TicketingAPI_V1.Repositories;
 
 namespace TicketingAPI_V1.Controllers
 {
-    [RoutePrefix("api/account")]
+    [RoutePrefix("api/accounts")]
     public class AccountController : BaseApiController
     {
         private UserRepository _userRepository;
