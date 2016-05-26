@@ -42,6 +42,15 @@
       <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -50,6 +59,9 @@
     </Reference>
     <Reference Include="MongoDB.Driver.Core">
       <HintPath>..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter">
+      <HintPath>..\packages\ValueInjecter.3.1.1.2\lib\net40\Omu.ValueInjecter.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -95,15 +107,25 @@
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="DataModels\PlatformTicketDataModel.cs" />
     <Compile Include="DataModels\TicketDataModel.cs" />
+    <Compile Include="DataModels\TicketStatus.cs" />
+    <Compile Include="DataModels\TicketType.cs" />
+    <Compile Include="DependencyResolver\UnityResolver.cs" />
     <Compile Include="Extensions\ValidationExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseResult.cs" />
+    <Compile Include="Models\BookTicketModel.cs" />
+    <Compile Include="Models\DisplayPlatformTicketModel.cs" />
+    <Compile Include="Models\DisplayTicketModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PlatformTicketModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\StringIdResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPlatformTicketRepository.cs" />
+    <Compile Include="Repositories\PlatformTicketRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Validators\LoginUserValidator.cs" />
     <Compile Include="Validators\RegisterUserValidator.cs" />
@@ -119,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

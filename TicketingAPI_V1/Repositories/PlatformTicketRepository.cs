@@ -11,7 +11,7 @@ using Omu.ValueInjecter;
 
 namespace TicketingAPI_V1.Repositories
 {
-    public class PlatformTicketRepository
+    public class PlatformTicketRepository : IPlatformTicketRepository
     {
         protected static IMongoClient _client;
 
@@ -28,13 +28,13 @@ namespace TicketingAPI_V1.Repositories
             _userRepository = new UserRepository();
         }
 
-        public async Task<BaseResult<DisplayPlatformTicketModel>> BookPlatformTicket(string userId,PlatformTicketModel model)
+        public async Task<BaseResult<DisplayPlatformTicketModel>> BookPlatformTicket(string userId, PlatformTicketModel model)
         {
             BaseResult<DisplayPlatformTicketModel> result = new BaseResult<DisplayPlatformTicketModel>();
 
             if (model != null && !String.IsNullOrWhiteSpace(userId))
             {
-                        
+
                 try
                 {
                     //Get user
@@ -69,12 +69,12 @@ namespace TicketingAPI_V1.Repositories
                     {
                         result.Suceeded = false;
                         result.AddError("User is unauthenticated.");
-                    }                  
+                    }
 
                 }
                 catch (Exception)
                 {
-                    result.Suceeded=false;
+                    result.Suceeded = false;
                     result.AddError("Error while booking platformticket, please try after some time.");
                 }
             }
@@ -95,7 +95,7 @@ namespace TicketingAPI_V1.Repositories
             {
                 model = new DisplayPlatformTicketModel();
                 model.InjectFrom(dataModel);
-                model.TicketStatus = dataModel.TicketStatus.ToString();
+                model.TicketStatus = dataModel.TicketStatus;
             }
             return model;
         }

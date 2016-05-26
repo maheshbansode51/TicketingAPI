@@ -13,11 +13,11 @@ namespace TicketingAPI_V1.Controllers
     [RoutePrefix("api/PlatformTickets")]
     public class PlatformTicketController : BaseApiController
     {
-        private PlatformTicketRepository _ticketRepository;
+        private IPlatformTicketRepository _ticketRepository;
 
-        public PlatformTicketController()
+        public PlatformTicketController(IPlatformTicketRepository ticketRepository)
         {
-            _ticketRepository = new PlatformTicketRepository();
+            _ticketRepository = ticketRepository;
         }
 
         [HttpPost]

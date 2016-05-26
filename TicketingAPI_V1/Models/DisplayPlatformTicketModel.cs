@@ -15,6 +15,6 @@ namespace TicketingAPI_V1.Models
         public string TicketPrice { get; set; }
         public string NoOfPersons { get; set; }
         public string JourneyDate { get; set; }
-        public string TicketStatus { get; set; }
+        public TicketStatus TicketStatus { get; set; }
     }
 }

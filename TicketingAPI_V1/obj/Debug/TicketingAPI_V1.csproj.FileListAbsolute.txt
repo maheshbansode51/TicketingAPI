@@ -37,3 +37,12 @@ D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\ru\FluentValidation.resource
 D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\sv\FluentValidation.resources.dll
 D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\tr\FluentValidation.resources.dll
 D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\zh-CN\FluentValidation.resources.dll
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Omu.ValueInjecter.dll
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Omu.ValueInjecter.pdb
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Omu.ValueInjecter.xml
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Microsoft.Practices.Unity.dll
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Microsoft.Practices.Unity.xml
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\TicketingAPI\TicketingAPI_V1\TicketingAPI_V1\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
